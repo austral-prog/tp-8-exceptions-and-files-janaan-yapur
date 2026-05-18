@@ -34,4 +34,22 @@ def grades_stats(filename):
             "Cami": (10.0, 10.0, 10.0),
         }
     """
-    pass  # Reemplazar con tu implementación
+    notas = {}
+    with open(filename, "r") as archivo:
+        for line in archivo:
+            line = line.strip()
+
+            if line == "":
+                continue
+            nombre, notas = notas.split(":")
+            lista_notas = notas.split(",")
+
+            numeros = []
+            for nota in lista_notas:
+                numeros.append(float(nota))
+
+            promedio = sum(numeros) / len(numeros)
+            maximo = max(numeros)
+            minimo = min(numeros)
+            notas[nombre] = (promedio, maximo, minimo)
+    return notas
