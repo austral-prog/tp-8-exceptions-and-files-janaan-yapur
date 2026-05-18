@@ -28,16 +28,16 @@ def count_words(filename):
         # archivo contiene: "Hola mundo hola\nmundo python\n"
         count_words("texto.txt") -> {"hola": 2, "mundo": 2, "python": 1}
     """
-    dict = {}
+    arch= {}
     with open (filename, 'r') as archivo:
         for line in archivo:
             words = line.strip().split()
 
             for word in words:
                 word = word.lower()
-                if word in dict:
-                    dict[word] += 1
+                if word in arch:
+                    arch[word] += 1
                 else:
-                    dict[word] = 1
-    return dict
+                    arch[word] = 1
+    return arch
 
