@@ -30,10 +30,10 @@ def find_longest_word(filename):
     larga = ""
     with open(filename, 'r') as archivo:
         for line in archivo:
-            words = line.split()
-        for word in words:
-            if len(word) > len(larga)
-                larga = word
+            words = line.strip().split()
+            for word in words:
+                if len(word) > len(larga):
+                    larga = word
         if larga == "":
             raise ValueError("file has no words")
     return larga
