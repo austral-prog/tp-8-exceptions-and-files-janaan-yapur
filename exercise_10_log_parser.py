@@ -45,19 +45,7 @@ def parse_log(filename):
     resultado = {}
     with open(filename, 'r') as archivo:
         for line in archivo:
-            line = line.strip()
-
-            if line =="":
-                continue
-
-            if ":" not in line:
-                raise ValueError("invalid log line")
-
-            nivel, mensaje = line.split(":", 1)
-
-
-            nivel = nivel.strip()
-            mensaje = mensaje.strip()
+            nivel, mensaje = line.strip().split(":", 1)
 
             if nivel not in resultado:
                 resultado[nivel] = []
