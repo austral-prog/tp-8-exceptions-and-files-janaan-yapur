@@ -30,15 +30,15 @@ def safe_average(filename):
     """
     numeros = []
     with open(filename, 'r') as archivo:
-        for line in filename:
+        for linea in archivo:
+            linea = linea.strip()
+            if linea == "":
+                continue
             try:
-                numero = float(line)
-                numeros.append(numero)
+                numeros.append(float(linea))
             except ValueError:
                 pass
-    if len(numeros) == 0:
-        raise ValueError("no valid numbers")
-
+                
     total = sum(numeros)
     promedio = total / len(numeros)
     return promedio
