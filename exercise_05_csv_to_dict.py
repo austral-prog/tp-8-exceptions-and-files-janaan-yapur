@@ -47,9 +47,7 @@ def csv_to_dict(filename):
             values = line.split(',')
             
             row_dict = {
-                headers[0]: values[0],
-                headers[1]: int(values[1]),
-                headers[2]: values[2]
+                headers[0]: values[0], headers[1]: int(values[1]), headers[2]: values[2]
             }
             
             result.append(row_dict)
