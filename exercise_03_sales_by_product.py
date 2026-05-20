@@ -36,19 +36,17 @@ def read_sales(filename):
         contenido = archivo.read()
     
         partes = contenido.strip()
-        partes = partes.split(";")
+        partes = partes.split(';')
         
         for parte in partes:
-            if parte == "":
-                continue
-                
-                producto, monto = parte.split(":")
-                monto = float(monto)
+            if parte != "":
+                producto, valor = parte.split(':')
+                valor = float(valor)
                 
                 if producto not in resultado:
-                    resultado[producto] = [monto]
+                    resultado[producto] = [valor]
                 elif producto in resultado:
-                    resultado[producto].append(monto)
+                    resultado[producto].append(valor
     return resultado
 
 def process_sales(data):
