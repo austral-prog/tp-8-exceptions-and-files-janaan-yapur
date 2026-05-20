@@ -44,8 +44,10 @@ def read_sales(filename):
             producto, monto = parte.split(":")
             monto = float(monto)
 
-            if producto not in resultado:
+            if producto in resultado:
                 resultado[producto].append(monto)
+            else:
+                resultado[producto] = [monto]
     return resultado
 
 
