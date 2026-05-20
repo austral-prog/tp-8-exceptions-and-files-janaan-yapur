@@ -37,17 +37,17 @@ def read_sales(filename):
 
         partes = contenido.split(";")
     
-        for parte in partes:
-             if parte == "":
-                continue
-        
-                producto, monto = parte.split(":")
-                monto = float(monto)
-        
-                if producto in resultado:
-                    resultado[producto].append(monto)
-                else:
-                    resultado[producto] = [monto]
+            for parte in partes:
+                 if parte == "":
+                    continue
+            
+                    producto, monto = parte.split(":")
+                    monto = float(monto)
+            
+                    if producto in resultado:
+                        resultado[producto].append(monto)
+                    else:
+                        resultado[producto] = [monto]
     return resultado
 
 
