@@ -46,7 +46,7 @@ def read_sales(filename):
                 if producto not in resultado:
                     resultado[producto] = [valor]
                 elif producto in resultado:
-                    resultado[producto].append(valor
+                    resultado[producto].append(valor)
     return resultado
 
 def process_sales(data):
