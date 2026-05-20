@@ -32,22 +32,22 @@ def read_sales(filename):
         }
     """
     resultado = {}
-    with open (filename, 'r') as archivo:
-        contenido = archivo.read()
-
-        partes = contenido.split(";")
+        with open (filename, 'r') as archivo:
+            contenido = archivo.read()
     
-        for parte in partes:
-            if parte == "":
-                continue
-            
-                producto, monto = parte.split(":")
-                monto = float(monto)
-            
-                if producto in resultado:
-                    resultado[producto].append(monto)
-                else:
-                    resultado[producto] = [monto]
+            partes = contenido.split(";")
+        
+            for parte in partes:
+                if parte == "":
+                    continue
+                
+                    producto, monto = parte.split(":")
+                    monto = float(monto)
+                
+                    if producto in resultado:
+                        resultado[producto].append(monto)
+                    else:
+                        resultado[producto] = [monto]
     return resultado
 
 
