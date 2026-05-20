@@ -42,7 +42,7 @@ def safe_average(filename):
                 number = float(clean_line)
                 total_sum += number
                 valid_count += 1
-            except ValueError
+            except ValueError:
                 continue
                 
     if valid_count == 0:
