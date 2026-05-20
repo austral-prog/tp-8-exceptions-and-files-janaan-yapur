@@ -46,10 +46,9 @@ def read_sales(filename):
                 
                 if producto not in resultado:
                     resultado[producto] = [monto]
-                else:
+                elif producto in resultado:
                     resultado[producto].append(monto)
     return resultado
-
 
 def process_sales(data):
     """
