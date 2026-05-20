@@ -35,8 +35,7 @@ def read_sales(filename):
     with open (filename, 'r') as archivo:
         contenido = archivo.read()
 
-    partes = contenido.strip()
-    partes = partes.split(";")
+    partes = contenido.split(";")
 
         for parte in partes:
             if parte == "":
