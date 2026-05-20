@@ -45,12 +45,12 @@ def grades_stats(filename):
             
             student, grades_str = clean_line.split(':')
             
-            grades = [float(n) for n in grades_str.split(',')]
+            grades = [float(n.strip()) for n in grades_str.split(',') if n.strip()]
             
             avg_grade = sum(grades) / len(grades)
             max_grade = max(grades)
             min_grade = min(grades)
-            
+
             stats_dict[student] = (avg_grade, max_grade, min_grade)
             
     return stats_dict
